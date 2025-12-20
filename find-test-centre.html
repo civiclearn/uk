@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Find a Life in the UK test centre</title>
+
+  <!-- SEO -->
+  <link rel="canonical" href="https://lifeintheuktestsupport.co.uk/find-test-centre.html" />
+  <meta name="description"
+        content="Find official Life in the UK test centres across England, Scotland, Wales and Northern Ireland. Browse by region or search by city." />
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Find your Life in the UK test centre">
+  <meta property="og:description"
+        content="Browse official Life in the UK test centres by region or city. Clear list, no map, easy to use." />
+  <meta property="og:image" content="/assets/images/og-default.jpg">
+
+  <!-- GLOBAL -->
+  <link rel="stylesheet" href="/assets/css/shared.css" />
+
+  <style>
+    .locator-hero {
+      max-width: 900px;
+      margin: 0 auto 2.5rem;
+      padding: 0 1rem;
+    }
+
+    .locator-eyebrow {
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #0b4ea2;
+      margin-bottom: 0.35rem;
+    }
+
+    .locator-hero h1 span {
+      background: linear-gradient(90deg, #0b4ea2, #c8102e);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .locator-note {
+      margin-top: 0.7rem;
+      font-size: 0.9rem;
+      color: #6f6f6f;
+    }
+
+    /* FILTER BAR */
+    .locator-toolbar {
+      max-width: 1100px;
+      margin: 0 auto 2rem;
+      padding: 0.9rem 1rem;
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      border-radius: 16px;
+      background: linear-gradient(
+        90deg,
+        rgba(11,78,162,0.08),
+        rgba(200,16,46,0.06)
+      );
+      border: 1px solid rgba(11,78,162,0.25);
+    }
+
+    .locator-select,
+    .locator-search {
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.2);
+      padding: 0.45rem 0.9rem;
+      font-size: 0.9rem;
+      background: #fff;
+    }
+
+    .locator-search {
+      flex: 1 1 220px;
+    }
+
+    /* LIST */
+    .locator-list {
+      max-width: 1100px;
+      margin: 0 auto 3rem;
+      padding: 0 1rem;
+    }
+
+    .locator-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .locator-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.1rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      border-left: 4px solid #0b4ea2;
+    }
+
+    .locator-card h3 {
+      margin: 0 0 0.3rem;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .locator-meta {
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.45;
+    }
+
+    .locator-region {
+      margin-top: 0.4rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #0b4ea2;
+    }
+
+    .no-results {
+      font-size: 0.95rem;
+      color: #666;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <a href="/index.html" class="brand-link">
+        <img src="/assets/images/uk.svg" alt="United Kingdom">
+        <div class="brand-title">LifeInTheUKTestSupport.co.uk</div>
+      </a>
+    </div>
+
+    <div class="header-center">
+      <nav class="header-nav">
+        <a href="/about-the-test.html">About the test</a>
+        <a href="/free-test.html">Free test</a>
+        <a href="/contact.html">Contact</a>
+        <a href="https://civiclearn.com/uk/login">Login</a>
+      </nav>
+    </div>
+
+    <div class="header-right">
+      <div class="brand-powered">powered by <span>CivicLearn</span></div>
+      <a href="https://civiclearn.com/uk/checkout.html" class="btn-small-purple">
+        Get access
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="cl-main">
+
+  <section class="locator-hero">
+    <div class="locator-eyebrow">Test centre locator</div>
+    <h1>Find your <span>Life in the UK test centre</span></h1>
+    <p>
+      Life in the UK tests are taken in person at approved test centres across
+      England, Scotland, Wales and Northern Ireland.
+      Use the filters below to find a centre near you.
+    </p>
+    <p class="locator-note">
+      Test bookings and dates are managed via the official UK government website.
+    </p>
+  </section>
+
+  <section class="locator-toolbar">
+    <select id="regionFilter" class="locator-select">
+      <option value="all">All regions</option>
+      <option>London</option>
+      <option>South East</option>
+      <option>South West</option>
+      <option>Midlands</option>
+      <option>North West</option>
+      <option>North East</option>
+      <option>Yorkshire and the Humber</option>
+      <option>East of England</option>
+      <option>Scotland</option>
+      <option>Wales</option>
+      <option>Northern Ireland</option>
+    </select>
+
+    <input id="searchInput"
+           class="locator-search"
+           type="text"
+           placeholder="Search by city, centre name, or address…" />
+  </section>
+
+  <section class="locator-list">
+    <div id="centreList" class="locator-cards"></div>
+    <div id="noResults" class="no-results" style="display:none;">
+      No test centres match your search.
+    </div>
+  </section>
+
+</main>
+
+<footer class="cl-footer">
+  <div class="cl-footer-inner">
+    © 2025 <span class="cl-footer-brand">CivicLearn</span> by Testrada — All rights reserved.
+  </div>
+</footer>
+
+<script>
+let centres = [];
+
+fetch("/assets/data/testcentres_uk.json")
+  .then(r => r.json())
+  .then(data => {
+    centres = data;
+    render();
+  });
+
+function render() {
+  const region = regionFilter.value;
+  const q = searchInput.value.toLowerCase();
+
+  const filtered = centres.filter(c =>
+    (region === "all" || c.region === region) &&
+    (
+      c.name.toLowerCase().includes(q) ||
+      c.city.toLowerCase().includes(q) ||
+      c.address.toLowerCase().includes(q)
+    )
+  );
+
+  centreList.innerHTML = "";
+  noResults.style.display = filtered.length ? "none" : "block";
+
+  filtered.forEach(c => {
+    const card = document.createElement("div");
+    card.className = "locator-card";
+    card.innerHTML = `
+      <h3>${c.name}</h3>
+      <div class="locator-meta">${c.address}</div>
+      <div class="locator-region">${c.region} · ${c.city}</div>
+    `;
+    centreList.appendChild(card);
+  });
+}
+
+regionFilter.onchange = searchInput.oninput = render;
+</script>
+
+</body>
+</html>

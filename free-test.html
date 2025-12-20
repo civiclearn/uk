@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Free Life in the UK Test – Practice Questions | LifeInTheUKTestSupport.co.uk</title>
+
+  <!-- SEO -->
+  <link rel="canonical" href="https://lifeintheuktestsupport.co.uk/free-test.html" />
+
+  <meta name="description"
+        content="Take a free Life in the UK Test practice quiz with 24 multiple-choice questions and a realistic time limit. Instant score, pass/fail result, and clear feedback." />
+
+  <meta name="keywords"
+        content="free life in the uk test, life in the uk practice test, british citizenship test free, uk settlement test practice, life in the uk handbook questions" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Free Life in the UK Test – Practice Quiz" />
+  <meta property="og:description"
+        content="Try a free Life in the UK Test practice quiz. 24 questions, instant score, and a clear pass/fail result." />
+  <meta property="og:url" content="https://lifeintheuktestsupport.co.uk/free-test.html" />
+  <meta property="og:image" content="https://lifeintheuktestsupport.co.uk/assets/images/og-default.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free Life in the UK Test – Practice Questions" />
+  <meta name="twitter:description"
+        content="Practise with Life in the UK Test–style questions and get instant feedback." />
+  <meta name="twitter:image" content="https://lifeintheuktestsupport.co.uk/assets/images/og-default.jpg" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/shared.css">
+  <link rel="stylesheet" href="/assets/css/testpages.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <a href="/index.html" class="brand-link">
+        <img src="/assets/images/uk.svg" alt="United Kingdom">
+        <div class="brand-title">LifeInTheUKTestSupport.co.uk</div>
+      </a>
+    </div>
+
+    <div class="header-center">
+      <nav class="header-nav">
+        <a href="/about-the-test.html">About the test</a>
+        <a href="/free-test.html">Free test</a>
+        <a href="/contact.html">Contact</a>
+        <a href="https://civiclearn.com/uk/login">Login</a>
+      </nav>
+    </div>
+
+    <div class="header-right">
+      <div class="brand-powered">
+        powered by <span>CivicLearn</span>
+      </div>
+      <a href="https://civiclearn.com/uk/checkout.html" class="btn-small-purple">
+        Get full access
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main>
+
+<section class="free-test-intro">
+  <p>
+    This free <strong>Life in the UK Test</strong> practice quiz helps you become familiar
+    with the type of questions used in the official test required for
+    <strong>Indefinite Leave to Remain</strong> and <strong>British citizenship</strong>.
+  </p>
+
+  <p>
+    The questions are based on the official handbook
+    <em>Life in the United Kingdom: A Guide for New Residents</em> and cover
+    British history, values, government, rights and everyday life.
+  </p>
+
+  <p>
+    No registration is required. You can start immediately and repeat the free test
+    as many times as you wish.
+  </p>
+</section>
+
+<div class="test-header">
+  <div>
+    <div class="badge">Free test – 24 questions</div>
+    <div class="progress" id="progressLabel">Question 1 of 24 · Score 0</div>
+  </div>
+  <div class="timer badge" id="timer">45:00</div>
+</div>
+
+<div class="question-card">
+  <div class="q-title" id="qTitle">…</div>
+  <div class="choices" id="choices"></div>
+
+  <div class="controls">
+    <button class="btn secondary" id="btnPrev" disabled>← Previous</button>
+    <button class="btn" id="btnNext" disabled>Next →</button>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div id="resultPanel" class="result-panel" style="display:none;">
+  <h2>Test result</h2>
+  <div id="gradeStamp" class="result-stamp"></div>
+  <p id="resultText" class="result-text"></p>
+
+  <div class="result-chart-container">
+    <canvas id="resultChart"></canvas>
+  </div>
+
+  <div class="cta">
+    <a href="https://civiclearn.com/uk/checkout.html" class="btn">
+      Get full access to all practice tests
+    </a>
+  </div>
+</div>
+
+</main>
+
+<footer class="cl-footer">
+  <div class="cl-footer-inner">
+    © 2025 <span class="cl-footer-brand">CivicLearn</span> — All rights reserved.
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+/* LIFE IN THE UK TEST – sample questions
+   First answer = correct (same convention as AU page)
+*/
+const QUESTIONS = [
+  {
+    q: "How many questions are there in the Life in the UK Test?",
+    a: ["24", "20", "25"]
+  },
+  {
+    q: "How long do you have to complete the Life in the UK Test?",
+    a: ["45 minutes", "30 minutes", "60 minutes"]
+  },
+  {
+    q: "What score is required to pass the Life in the UK Test?",
+    a: ["75%", "70%", "80%"]
+  },
+  {
+    q: "Which book is the Life in the UK Test based on?",
+    a: [
+      "Life in the United Kingdom: A Guide for New Residents",
+      "British Citizenship Handbook",
+      "Guide to Living in Britain"
+    ]
+  },
+  {
+    q: "Who is the head of state of the United Kingdom?",
+    a: ["The King", "The Prime Minister", "The Speaker of the House"]
+  },
+  {
+    q: "What is the name of the UK Parliament’s lower chamber?",
+    a: ["House of Commons", "House of Lords", "Privy Council"]
+  },
+  {
+    q: "At what age can British citizens vote in a general election?",
+    a: ["18", "16", "21"]
+  },
+  {
+    q: "Which flower is associated with England?",
+    a: ["The rose", "The thistle", "The daffodil"]
+  },
+  {
+    q: "What is the name of the national anthem of the UK?",
+    a: ["God Save the King", "Rule, Britannia!", "Land of Hope and Glory"]
+  },
+  {
+    q: "Which two Houses make up the UK Parliament?",
+    a: [
+      "The House of Commons and the House of Lords",
+      "The House of Commons and the Senate",
+      "The House of Lords and the Cabinet"
+    ]
+  },
+  {
+    q: "What does the term ‘the rule of law’ mean?",
+    a: [
+      "Everyone is subject to the law, including the government",
+      "Only citizens must obey the law",
+      "Courts can overrule Parliament at any time"
+    ]
+  },
+  {
+    q: "Which day is Remembrance Day observed in the UK?",
+    a: ["11 November", "1 July", "25 December"]
+  },
+  {
+    q: "Which country is part of the United Kingdom?",
+    a: ["Wales", "Republic of Ireland", "France"]
+  },
+  {
+    q: "What is the capital city of Scotland?",
+    a: ["Edinburgh", "Glasgow", "Aberdeen"]
+  },
+  {
+    q: "Which document limited the power of the monarch in 1215?",
+    a: ["Magna Carta", "Bill of Rights", "Act of Union"]
+  },
+  {
+    q: "Who appoints the Prime Minister?",
+    a: ["The King", "The House of Lords", "The Cabinet"]
+  },
+  {
+    q: "What is the name of the UK’s flag?",
+    a: ["The Union Flag", "The St George’s Cross", "The Royal Standard"]
+  },
+  {
+    q: "Which service is funded by taxation in the UK?",
+    a: ["The National Health Service (NHS)", "Private healthcare only", "Local charities"]
+  },
+  {
+    q: "What is the name of the UK’s police emergency number?",
+    a: ["999", "911", "112"]
+  },
+  {
+    q: "Which event takes place when someone becomes a British citizen?",
+    a: [
+      "A citizenship ceremony",
+      "A parliamentary vote",
+      "A court hearing"
+    ]
+  },
+  {
+    q: "What responsibility do citizens have when called?",
+    a: ["To serve on a jury", "To join the armed forces", "To vote every week"]
+  },
+  {
+    q: "Which language is used for official government business in the UK?",
+    a: ["English", "Latin", "French"]
+  },
+  {
+    q: "Which part of the UK uses the thistle as a national symbol?",
+    a: ["Scotland", "England", "Wales"]
+  },
+  {
+    q: "What must you bring to the Life in the UK Test centre?",
+    a: ["Valid identification", "Your passport only", "Proof of address only"]
+  }
+];
+
+// ---- ENGINE (same as AU) ----
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+const model = QUESTIONS.map((item, idx) => {
+  const correct = item.a[0];
+  const shuffled = shuffle(item.a);
+  return {
+    index: idx,
+    text: item.q,
+    choices: shuffled.map(opt => ({ text: opt, isCorrect: opt === correct })),
+    answered: false,
+    pickedIndex: -1
+  };
+});
+
+const qTitle = document.getElementById('qTitle');
+const choicesEl = document.getElementById('choices');
+const btnPrev = document.getElementById('btnPrev');
+const btnNext = document.getElementById('btnNext');
+const progressLabel = document.getElementById('progressLabel');
+const resultPanel = document.getElementById('resultPanel');
+const gradeStamp = document.getElementById('gradeStamp');
+const resultText = document.getElementById('resultText');
+const timerEl = document.getElementById('timer');
+
+let qi = 0, score = 0;
+const total = model.length;
+
+// 45 minutes
+let timerSec = 45 * 60;
+
+const timerInt = setInterval(() => {
+  timerSec--;
+  if (timerSec < 0) {
+    clearInterval(timerInt);
+    finishTest();
+    return;
+  }
+  const m = Math.floor(timerSec / 60).toString().padStart(2, '0');
+  const s = (timerSec % 60).toString().padStart(2, '0');
+  timerEl.textContent = `${m}:${s}`;
+}, 1000);
+
+function renderQuestion() {
+  const q = model[qi];
+  qTitle.textContent = q.text;
+  choicesEl.innerHTML = '';
+  q.choices.forEach((c, idx) => {
+    const btn = document.createElement('button');
+    btn.className = 'choice' + (q.answered ? ' disabled' : '');
+    btn.textContent = c.text;
+    btn.addEventListener('click', () => pick(idx));
+    choicesEl.appendChild(btn);
+  });
+
+  btnPrev.disabled = (qi === 0);
+  btnNext.disabled = !q.answered;
+  progressLabel.textContent = `Question ${qi + 1} of ${total} · Score ${score}`;
+}
+
+function pick(choiceIndex) {
+  const q = model[qi];
+  if (q.answered) return;
+
+  q.answered = true;
+  q.pickedIndex = choiceIndex;
+
+  const picked = q.choices[choiceIndex];
+  if (picked && picked.isCorrect) score++;
+
+  const buttons = Array.from(choicesEl.querySelectorAll('button'));
+  buttons.forEach((b, idx) => {
+    b.classList.add('disabled');
+    b.disabled = true;
+    const isCorrect = q.choices[idx].isCorrect;
+    if (isCorrect) b.classList.add('correct');
+    if (idx === choiceIndex && !isCorrect) b.classList.add('wrong');
+  });
+
+  btnNext.disabled = false;
+  progressLabel.textContent = `Question ${qi + 1} of ${total} · Score ${score}`;
+}
+
+btnPrev.onclick = () => { if (qi > 0) { qi--; renderQuestion(); } };
+btnNext.onclick = () => { qi < total - 1 ? (qi++, renderQuestion()) : finishTest(); };
+
+function finishTest() {
+  clearInterval(timerInt);
+  document.querySelector('.question-card').style.display = 'none';
+  resultPanel.style.display = 'block';
+
+  const wrong = total - score;
+  const pass = score >= 18; // 75%
+
+  gradeStamp.textContent = pass ? "Passed!" : "Not passed";
+  gradeStamp.className = "result-stamp " + (pass ? "pass" : "fail");
+
+  resultText.textContent =
+    `Final score: ${score} / ${total} (${Math.round(score / total * 100)}%).`;
+
+  new Chart(document.getElementById('resultChart'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Correct', 'Incorrect'],
+      datasets: [{ data: [score, wrong] }]
+    },
+    options: {
+      plugins: { legend: { position: 'bottom' } },
+      cutout: '65%'
+    }
+  });
+}
+
+renderQuestion();
+</script>
+
+</body>
+</html>
