@@ -89,6 +89,8 @@
 
     <form id="contactForm" class="contact-form">
 
+      <input type="text" name="company" tabindex="-1" autocomplete="off" style="display:none">
+
       <div class="field">
         <label>Name*</label>
         <input type="text" name="name" required>
@@ -123,18 +125,22 @@
 </main>
 
 
+
 <footer class="cl-footer">
   <div class="cl-footer-inner">
     © 2025 <span class="cl-footer-brand">CivicLearn</span> by Testrada — All rights reserved.
   </div>
 </footer>
 
-
 <script>
 document.getElementById("contactForm").addEventListener("submit", async function(e) {
   e.preventDefault();
 
   const form = e.target;
+
+  if (form.querySelector('input[name="company"]').value) {
+    return; 
+  }
 
   const success = document.getElementById("successMessage");
   const error = document.getElementById("errorMessage");
@@ -165,20 +171,22 @@ document.getElementById("contactForm").addEventListener("submit", async function
     });
 
     if (response.ok) {
-      success.style.display = "block"; // e.g. “Your message has been sent.”
+      success.style.display = "block";
       form.reset();
-      submitBtn.style.display = "none"; // hide button after success
+      submitBtn.style.display = "none";
     } else {
       throw new Error("Request failed");
     }
 
   } catch (err) {
-    error.style.display = "block"; // e.g. “Something went wrong. Please try again.”
+    error.style.display = "block";
     submitBtn.disabled = false;
     submitBtn.innerText = originalText;
   }
 });
 </script>
+
+
 
 
 </body>
