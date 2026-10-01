@@ -47,395 +47,257 @@
   }
   </script>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/newhome.css">
-  <style>
-    #inline-progressbar {
-      background: linear-gradient(
-        90deg,
-        #0b4ea2 0%,
-        #c8102e 100%
-      );
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/css/home-v2.css">
 </head>
-
 <body>
 
 <!-- HEADER -->
-<header class="cl-header">
-  <div class="cl-header-inner">
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <a href="/" class="logo logo-long"><img alt="UK" src="/assets/images/uk.svg"/><span>LifeInTheUKTestSupport.co.uk</span></a>
 
-    <a href="/" class="cl-logo">
-      <img src="/assets/images/uk.svg" alt="UK" />
-      <span>LifeInTheUKTestSupport.co.uk</span>
-    </a>
+    <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"
+      onclick="var o=document.getElementById('hdr').classList.toggle('menu-open');this.setAttribute('aria-expanded',o)">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
 
-    <nav class="cl-nav">
+    <nav class="nav" id="site-nav">
       <a href="/about-the-test.html">About the test</a>
       <a href="/contact.html">Contact</a>
       <a href="https://civiclearn.com/uk/login">Login</a>
     </nav>
 
-    <div class="cl-right">
-      <div class="cl-powered">
-        powered by <span>CivicLearn</span>
+    <div class="hdr-right">
+      <div class="powered">
+        <div>powered by <b>CivicLearn</b></div>
+        <a class="tp" href="https://www.trustpilot.com/review/civiclearn.com" target="_blank" rel="noopener" aria-label="CivicLearn on Trustpilot: rated 4.5 out of 5">
+          <span class="tp-stars" aria-hidden="true">
+            <svg viewBox="0 0 25 25"><rect width="25" height="25" fill="#00b67a"/><path fill="#fff" d="M12.5 4.3l2.1 5.1 5.5.4-4.2 3.6 1.3 5.4-4.7-3-4.7 3 1.3-5.4-4.2-3.6 5.5-.4z"/></svg>
+            <svg viewBox="0 0 25 25"><rect width="25" height="25" fill="#00b67a"/><path fill="#fff" d="M12.5 4.3l2.1 5.1 5.5.4-4.2 3.6 1.3 5.4-4.7-3-4.7 3 1.3-5.4-4.2-3.6 5.5-.4z"/></svg>
+            <svg viewBox="0 0 25 25"><rect width="25" height="25" fill="#00b67a"/><path fill="#fff" d="M12.5 4.3l2.1 5.1 5.5.4-4.2 3.6 1.3 5.4-4.7-3-4.7 3 1.3-5.4-4.2-3.6 5.5-.4z"/></svg>
+            <svg viewBox="0 0 25 25"><rect width="25" height="25" fill="#00b67a"/><path fill="#fff" d="M12.5 4.3l2.1 5.1 5.5.4-4.2 3.6 1.3 5.4-4.7-3-4.7 3 1.3-5.4-4.2-3.6 5.5-.4z"/></svg>
+            <svg viewBox="0 0 25 25"><rect width="12.5" height="25" fill="#00b67a"/><rect x="12.5" width="12.5" height="25" fill="#dcdce6"/><path fill="#fff" d="M12.5 4.3l2.1 5.1 5.5.4-4.2 3.6 1.3 5.4-4.7-3-4.7 3 1.3-5.4-4.2-3.6 5.5-.4z"/></svg>
+          </span>
+          <span class="tp-word">Trustpilot</span>
+        </a>
       </div>
-
-      <a href="https://civiclearn.com/uk/checkout.html" class="cl-btn">
-        Get access
-      </a>
+      <a href="https://civiclearn.com/uk/checkout.html" class="btn btn-primary">Get access</a>
     </div>
-
   </div>
 </header>
 
+<main>
+
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-center">
-
-    <div class="hero-kicker">
-      <div class="hero-kicker-dot"></div>
-      Complete preparation for the Life in the UK Test
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker">Complete preparation for the Life in the UK Test</span>
+      <h1><span>Life in the UK Test:</span> Prepare online, with clarity and confidence.</h1>
+      <p class="hero-sub">Practise with questions built from the official Life in the UK handbook. Build strong habits, track progress, and arrive ready for test day.</p>
+      <div class="hero-ctas">
+        <a href="https://civiclearn.com/uk/checkout.html" class="btn btn-primary" id="hero-cta">Start preparing</a>
+        <a href="#questions-demo" class="btn btn-ghost">See sample questions</a>
+      </div>
+      <p class="hero-meta"><strong>£19 once</strong> · lifetime access · no subscription</p>
+      <div class="rating">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <strong>Excellent</strong>
+        <span>Trusted by thousands of candidates since 2005.</span>
+      </div>
     </div>
-
-    <h1 class="hero-title">
-      <span>Life in the UK Test:</span><br>
-      Prepare online, with clarity and confidence.
-    </h1>
-
-    <p class="hero-subtitle">
-      Practise with questions built from the official Life in the UK handbook.
-      Build strong habits, track progress, and arrive ready for test day.
-    </p>
-
-    <div class="hero-actions">
-      <a href="https://civiclearn.com/uk/checkout.html" class="hero-primary-btn">Start preparing</a>
-      <a href="#questions-demo" class="hero-secondary-btn">See sample questions</a>
+    <div class="hero-img">
+      <img src="assets/images/devices-uk.webp" alt="Accessible on all devices" width="2981" height="1960" fetchpriority="high" decoding="async">
     </div>
+  </div>
+</section>
 
-    <div class="hero-social">
-      <span class="rating-stars">★★★★★</span>
-      <span class="rating-word">Excellent</span>
-      <span class="rating-subtext">Trusted by thousands of candidates since 2005.</span>
+<!-- THE TEST AT A GLANCE (official source linked below) -->
+<section class="facts" aria-label="The Life in the UK Test at a glance">
+  <div class="wrap">
+    <div class="facts-grid">
+      <div class="fact"><div class="fact-num">24</div><div class="fact-label">questions</div><div class="fact-text">About British traditions and customs</div></div>
+      <div class="fact"><div class="fact-num">45 min</div><div class="fact-label">to answer</div><div class="fact-text">At one of 30+ UK test centres</div></div>
+      <div class="fact"><div class="fact-num">75%</div><div class="fact-label">to pass</div><div class="fact-text">That is 18 of the 24 questions</div></div>
+      <div class="fact"><div class="fact-num">£50</div><div class="fact-label">test fee</div><div class="fact-text">Booked online at least 3 days ahead</div></div>
     </div>
-
-    <div class="hero-image-wide">
-      <img src="assets/images/devices-uk.webp" alt="Accessible on all devices">
-    </div>
-
+    <p class="facts-src">Source: <a href="https://www.gov.uk/life-in-the-uk-test" target="_blank" rel="noopener">GOV.UK</a></p>
   </div>
 </section>
 
 <!-- FEATURES -->
-<section>
-  <div class="section-heading">
-    <div class="section-kicker">Structured preparation</div>
-    <h2 class="section-title">Everything you need to be ready</h2>
-    <p class="section-lead">
-      Practice questions, exam-style sessions, and a clean, focused revision experience.
-    </p>
-  </div>
-
-  <div class="features-grid">
-
-    <!-- CARD 1 -->
-    <div class="feature-card" onclick="location.href='/about-the-test.html'">
-      <a href="/about-the-test.html" class="feature-card-link">
-        <div class="feature-icon">
-          <img src="/assets/images/icons/1.svg" alt="">
-        </div>
-        <h3 class="feature-title">Handbook-based content</h3>
-        <p class="feature-text">
-          Practice questions aligned with the official Life in the UK handbook,
-          covering history, values, institutions and everyday life.
-        </p>
-        <div class="feature-cta">
-          Learn about the test <span class="arrow">›</span>
-        </div>
-      </a>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Structured preparation</span>
+      <h2>Everything you need to be ready</h2>
+      <p>Practice questions, exam-style sessions, and a clean, focused revision experience.</p>
     </div>
-
-    <!-- CARD 2 -->
-    <div class="feature-card" onclick="location.href='/free-test.html'">
-      <a href="/free-test.html" class="feature-card-link">
-        <div class="feature-icon">
-          <img src="/assets/images/icons/2.svg" alt="">
-        </div>
-        <h3 class="feature-title">Realistic practice sessions</h3>
-        <p class="feature-text">
-          Train with exam-style practice and instant feedback,
-          so you can see what needs work and improve steadily.
-        </p>
-        <div class="feature-cta">
-          Take a free test <span class="arrow">›</span>
-        </div>
-      </a>
+    <div class="features">
+      <div class="feature">
+        <img src="/assets/images/icons/1.svg" alt="">
+        <h3>Handbook-based content</h3>
+        <p>Practice questions aligned with the official Life in the UK handbook, covering history, values, institutions and everyday life.</p>
+      </div>
+      <div class="feature">
+        <img src="/assets/images/icons/2.svg" alt="">
+        <h3>Realistic practice sessions</h3>
+        <p>Train with exam-style practice and instant feedback, so you can see what needs work and improve steadily.</p>
+      </div>
+      <div class="feature">
+        <img src="/assets/images/icons/3.svg" alt="">
+        <h3>Confidence on test day</h3>
+        <p>Revise at your pace, reduce stress, and go into the test with a calm, prepared mindset.</p>
+      </div>
     </div>
-
-    <!-- CARD 3 -->
-    <div class="feature-card" onclick="location.href='/find-test-centre.html'">
-      <a href="/find-test-centre.html" class="feature-card-link">
-        <div class="feature-icon">
-          <img src="/assets/images/icons/3.svg" alt="">
-        </div>
-        <h3 class="feature-title">Confidence on test day</h3>
-        <p class="feature-text">
-          Revise at your pace, reduce stress,
-          and go into the test with a calm, prepared mindset.
-        </p>
-        <div class="feature-cta">
-          Find your test centre <span class="arrow">›</span>
-        </div>
-      </a>
-    </div>
-
   </div>
 </section>
 
-<!-- INLINE TEST -->
-<div id="questions-demo">
-<section class="inline-test">
-  <div class="inline-test-inner">
-
-    <h2 class="inline-test-title">Try Life in the UK Test-style questions for free</h2>
-    <p class="inline-test-subtitle">Get a feel for the format and level.</p>
-
-    <div class="inline-test-cta-top">
-      <a href="https://civiclearn.com/uk/checkout.html" class="hero-primary-btn">
-        Full access · hundreds of questions
-      </a>
-    </div>
-
-    <div class="inline-progress-container">
-      <div class="inline-test-inner">
-        <div id="inline-progress-text"></div>
-        <div class="inline-progressbar-wrapper">
-          <div id="inline-progressbar"></div>
-        </div>
+<!-- FREE QUESTIONS (rendered by /assets/js/hometest.js) -->
+<section class="section quiz" id="questions-demo">
+  <div class="wrap">
+    <div class="quiz-top">
+      <div class="section-head">
+        <span class="kicker">Free practice</span>
+        <h2>Try Life in the UK Test-style questions for free</h2>
+        <p>Get a feel for the format and level.</p>
       </div>
+      <a href="https://civiclearn.com/uk/checkout.html" class="btn btn-ghost">Full access · hundreds of questions</a>
     </div>
-
-    <div class="inline-test-inner">
-      <div id="inline-test-questions"></div>
-	  
-	  
-	  
+    <div class="progress">
+      <div id="inline-progress-text"></div>
+      <div class="progress-track"><div id="inline-progressbar"></div></div>
     </div>
+    <div id="inline-test-questions"></div>
+  </div>
+</section>
 
 <!-- PRICING -->
-<section class="premium-pricing">
-  <div class="pricing-card">
-
-    <div class="pricing-top">
-      <span class="pricing-tag">Premium access</span>
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="kicker">One simple price</span>
+      <h2>Everything included, for life</h2>
     </div>
-
-    <div class="pricing-price">
-      <div class="amount">£19</div>
-      <div class="subtitle">One-time payment — lifetime access</div>
+    <div class="price-card">
+      <div class="price-left">
+        <span class="price-tag">Premium access</span>
+        <div class="price-amount">£19<small>one time</small></div>
+        <p class="price-sub">Lifetime access. Pay once, practise as long as you need.</p>
+        <a class="btn btn-primary" href="https://civiclearn.com/uk/checkout.html">Start now</a>
+        <p class="price-note">No subscription · Instant activation</p>
+      </div>
+      <div class="price-right">
+        <h3>What you get</h3>
+        <ul class="checks">
+          <li>1300+ practice questions</li>
+          <li>Exam-style practice sessions</li>
+          <li>Topic-based revision modes</li>
+          <li>Frequently missed questions tracking</li>
+          <li>Detailed progress statistics</li>
+          <li>Audio reading support</li>
+          <li>Flashcards</li>
+          <li>Study guide</li>
+          <li>Works on phone, tablet, and desktop</li>
+          <li>Daily practice test</li>
+          <li>Instant activation after payment</li>
+        </ul>
+      </div>
     </div>
+  </div>
+</section>
 
-    <div class="pricing-divider"></div>
+<!-- TESTIMONIALS -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="kicker">From our users</span>
+      <h2>They prepared for the Life in the UK Test with the platform</h2>
+    </div>
+    <div class="quotes">
+      <figure class="quote">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>“Doing a little practice every day helped massively. By the time I took the test, the question style felt familiar and I was much less nervous.”</p>
+        <figcaption class="quote-by"><img src="/assets/images/avatar1.png" alt="" width="40" height="40">Sarah M.</figcaption>
+      </figure>
+      <figure class="quote">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>“The topic practice made it easy to spot weak areas and focus revision. Clear layout, useful tracking, and no wasted time.”</p>
+        <figcaption class="quote-by"><img src="/assets/images/avatar2.png" alt="" width="40" height="40">Imran A.</figcaption>
+      </figure>
+      <figure class="quote">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>“I started a few weeks before my appointment. The structure kept me consistent, and the practice sessions made me feel properly ready.”</p>
+        <figcaption class="quote-by"><img src="/assets/images/avatar3.png" alt="" width="40" height="40">Elena P.</figcaption>
+      </figure>
+    </div>
+    <p class="quotes-more">More reviews of CivicLearn on <a href="https://www.trustpilot.com/review/civiclearn.com" target="_blank" rel="noopener">Trustpilot</a>.</p>
+  </div>
+</section>
 
-    <ul class="feature-list">
-      <li>1300+ practice questions</li>
-      <li>Exam-style practice sessions</li>
-      <li>Topic-based revision modes</li>
-      <li>Frequently missed questions tracking</li>
-      <li>Detailed progress statistics</li>
-      <li>Audio reading support</li>
-      <li>Flashcards</li>
-      <li>Study guide</li>
-      <li>Works on phone, tablet, and desktop</li>
-      <li>Daily practice test</li>
-      <li>Instant activation after payment</li>
-    </ul>
+<!-- FAQ -->
+<section class="section" style="padding-top:0">
+  <div class="wrap faq-grid">
+    <div class="section-head">
+      <span class="kicker">Frequently asked questions</span>
+      <h2>Questions about preparing for the Life in the UK Test</h2>
+      <p>Anything else? <a href="/contact.html">Write to us</a>.</p>
+    </div>
+    <div class="faq-list">
+      <details><summary>How long do I keep access?</summary><p>Access is permanent. You pay once and can return any time, whenever you want to revise again.</p></details>
+      <details><summary>Are these the exact questions from the real test?</summary><p>The official test questions are not published as a fixed list. Our questions follow the official handbook topics and reflect the style and level candidates can expect.</p></details>
+      <details><summary>Is there an official list of questions to memorise?</summary><p>No single official list exists. The test covers a broad set of topics, so structured practice is the best way to prepare thoroughly.</p></details>
+      <details><summary>How does the platform help me improve?</summary><p>Topic practice, repeat training on difficult questions, and progress tracking help you strengthen knowledge over time and build confidence for test day.</p></details>
+      <details><summary>Do I need to install an app?</summary><p>No. It runs directly in your browser on mobile, tablet, or desktop.</p></details>
+      <details><summary>What if I can’t revise every day?</summary><p>Short sessions and your history make it easy to stay consistent even with limited time. You can quickly see what to revisit next.</p></details>
+    </div>
+  </div>
+</section>
 
-    <a class="pricing-cta" href="https://civiclearn.com/uk/checkout.html">
-      Start now
+
+<!-- CLOSING CTA -->
+<section style="padding:0 0 40px">
+  <div class="wrap">
+    <div class="closing">
+      <div>
+        <h2>Ready to pass the Life in the UK Test?</h2>
+        <p>Hundreds of practice questions, exam-style sessions and progress tracking in one place. £19, once.</p>
+      </div>
+      <a href="https://civiclearn.com/uk/checkout.html" class="btn btn-primary">Start preparing</a>
+    </div>
+  </div>
+</section>
+
+<!-- RANKING + DEVICES -->
+<section style="padding:24px 0 0">
+  <div class="wrap">
+    <a class="rank" href="https://civiclearn.com/passport-ranking">
+      <span class="rank-tag">PASSPORT RANKING</span>
+      <span><strong>The UK passport ranks 6th in the world in a crisis</strong> — what a passport does when you need to get out.</span>
+      <span class="rank-go">See the ranking →</span>
     </a>
-
-  </div>
-
-  <div class="pricing-guarantee">
-    One-time payment. No subscription.
+    <div class="devices" aria-label="Compatible with all modern devices and browsers">
+      <span><img src="/assets/images/logos/windows.svg" alt="">Windows</span>
+      <span><img src="/assets/images/logos/macos.svg" alt="">macOS</span>
+      <span><img src="/assets/images/logos/android.svg" alt="">Android</span>
+      <span><img src="/assets/images/logos/ios.svg" alt="">iPhone / iPad</span>
+      <span><img src="/assets/images/logos/chrome.svg" alt="">Chrome</span>
+      <span><img src="/assets/images/logos/safari.svg" alt="">Safari</span>
+      <span><img src="/assets/images/logos/firefox.svg" alt="">Firefox</span>
+    </div>
   </div>
 </section>
 
-<section class="cl-testimonials">
-  <div class="cl-testimonials-header">
-    <h2>They prepared for the Life in the UK Test with the platform</h2>
-    <p>Real feedback from candidates preparing for settlement and citizenship</p>
-  </div>
+</main>
 
-  <div class="cl-testimonials-grid">
-
-    <div class="cl-testimonial-card">
-      <div class="cl-testimonial-avatar">
-        <img src="/assets/images/avatar1.png" alt="">
-      </div>
-      <p class="cl-testimonial-text">
-        “Doing a little practice every day helped massively. By the time I took the test, the question style felt familiar and I was much less nervous.”
-      </p>
-      <div class="cl-testimonial-author">Sarah M.</div>
-    </div>
-
-    <div class="cl-testimonial-card">
-      <div class="cl-testimonial-avatar">
-        <img src="/assets/images/avatar2.png" alt="">
-      </div>
-      <p class="cl-testimonial-text">
-        “The topic practice made it easy to spot weak areas and focus revision. Clear layout, useful tracking, and no wasted time.”
-      </p>
-      <div class="cl-testimonial-author">Imran A.</div>
-    </div>
-
-    <div class="cl-testimonial-card">
-      <div class="cl-testimonial-avatar">
-        <img src="/assets/images/avatar3.png" alt="">
-      </div>
-      <p class="cl-testimonial-text">
-        “I started a few weeks before my appointment. The structure kept me consistent, and the practice sessions made me feel properly ready.”
-      </p>
-      <div class="cl-testimonial-author">Elena P.</div>
-    </div>
-
-  </div>
-</section>
-
-<section class="cl-faq">
-
-  <div class="section-heading">
-    <div class="section-kicker">Frequently asked questions</div>
-    <h2 class="section-title">Questions about preparing for the Life in the UK Test</h2>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question">
-      <span>How long do I keep access?</span>
-    </div>
-    <div class="faq-answer">
-      <p>Access is permanent. You pay once and can return any time, whenever you want to revise again.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question">
-      <span>Are these the exact questions from the real test?</span>
-    </div>
-    <div class="faq-answer">
-      <p>The official test questions are not published as a fixed list. Our questions follow the official handbook topics and reflect the style and level candidates can expect.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question">
-      <span>Is there an official list of questions to memorise?</span>
-    </div>
-    <div class="faq-answer">
-      <p>No single official list exists. The test covers a broad set of topics, so structured practice is the best way to prepare thoroughly.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question">
-      <span>How does the platform help me improve?</span>
-    </div>
-    <div class="faq-answer">
-      <p>Topic practice, repeat training on difficult questions, and progress tracking help you strengthen knowledge over time and build confidence for test day.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question">
-      <span>Do I need to install an app?</span>
-    </div>
-    <div class="faq-answer">
-      <p>No. It runs directly in your browser on mobile, tablet, or desktop.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question">
-      <span>What if I can’t revise every day?</span>
-    </div>
-    <div class="faq-answer">
-      <p>Short sessions and your history make it easy to stay consistent even with limited time. You can quickly see what to revisit next.</p>
-    </div>
-  </div>
-
-</section>
-
-<!-- PASSPORT RANKING STRIP — standalone (No Articles approach) -->
-<section style="padding:8px 24px 28px;">
-  <a href="https://civiclearn.com/passport-ranking"
-     style="display:flex;align-items:center;gap:14px;max-width:820px;margin:0 auto;padding:13px 22px;background:#fff;border:1px solid #e5e1da;border-left:3px solid #7c3aed;border-radius:12px;text-decoration:none;color:#1d2230;text-align:left;transition:border-color .15s,box-shadow .15s;"
-     onmouseover="this.style.borderColor='#7c3aed';this.style.boxShadow='0 4px 16px rgba(124,58,237,.12)'"
-     onmouseout="this.style.borderColor='#e5e1da';this.style.borderLeftColor='#7c3aed';this.style.boxShadow='none'">
-    <span style="flex:0 0 auto;background:#f5f0ff;color:#7c3aed;font-weight:700;font-size:.7rem;letter-spacing:.02em;padding:5px 10px;border-radius:6px;white-space:nowrap;">PASSPORT RANKING</span>
-    <span style="flex:1 1 auto;min-width:0;font-size:.86rem;line-height:1.45;color:#555;text-align:left;">
-      <strong style="color:#1a1a2e;">The UK passport ranks 6th in the world in a crisis</strong> — what a passport does when you need to get out.
-    </span>
-    <span style="flex:0 0 auto;color:#7c3aed;font-weight:600;font-size:.84rem;white-space:nowrap;">See the ranking &rarr;</span>
-  </a>
-</section>
-
-<section class="compat-section">
-  <div class="compat-inner">
-
-    <h2 class="compat-title">
-      Compatible with all modern devices and browsers
-    </h2>
-
-    <div class="compat-grid">
-
-      <div class="compat-item">
-        <img src="/assets/images/logos/windows.svg" alt="Windows">
-        <p>Windows</p>
-      </div>
-
-      <div class="compat-item">
-        <img src="/assets/images/logos/macos.svg" alt="macOS">
-        <p>macOS</p>
-      </div>
-
-      <div class="compat-item">
-        <img src="/assets/images/logos/android.svg" alt="Android">
-        <p>Android</p>
-      </div>
-
-      <div class="compat-item">
-        <img src="/assets/images/logos/ios.svg" alt="iPhone / iPad">
-        <p>iPhone / iPad</p>
-      </div>
-
-      <div class="compat-item">
-        <img src="/assets/images/logos/chrome.svg" alt="Chrome">
-        <p>Chrome</p>
-      </div>
-
-      <div class="compat-item">
-        <img src="/assets/images/logos/safari.svg" alt="Safari">
-        <p>Safari</p>
-      </div>
-
-      <div class="compat-item">
-        <img src="/assets/images/logos/firefox.svg" alt="Firefox">
-        <p>Firefox</p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div>© 2025 LifeInTheUKTestSupport.co.uk – part of the CivicLearn network.</div>
-    <div class="footer-links">
+<footer class="foot">
+  <div class="wrap">
+    <div>© 2026 LifeInTheUKTestSupport.co.uk – part of the CivicLearn network.</div>
+    <nav>
       <a href="https://civiclearn.com/insights">Insights</a>
       <a href="/about-the-test.html">About the test</a>
       <a href="/contact.html">Contact</a>
@@ -443,23 +305,44 @@
       <a href="/refund-policy.html">Refunds</a>
       <a href="/terms-and-conditions.html">Terms</a>
       <a href="/cookie-policy.html">Cookies</a>
-    </div>
+    </nav>
   </div>
 </footer>
 
-<!-- Questions remain wherever they are defined (hometest.js), unchanged on purpose -->
+<!-- Mobile sticky CTA (appears once the hero button scrolls away, hides over pricing) -->
+<div class="sticky-cta" id="sticky-cta" aria-hidden="true">
+  <span><b>£19 once</b>Lifetime access</span>
+  <a href="https://civiclearn.com/uk/checkout.html" class="btn btn-primary" tabindex="-1">Get started</a>
+</div>
+
 <script src="/assets/js/hometest.js"></script>
 <script>
-document.querySelectorAll(".faq-item").forEach(item => {
-  const q = item.querySelector(".faq-question");
-  q.addEventListener("click", () => {
-    document.querySelectorAll(".faq-item").forEach(i => {
-      if (i !== item) i.classList.remove("open");
-    });
-    item.classList.toggle("open");
-  });
-});
+(function(){
+  var s=document.getElementById('sticky-cta'), h=document.getElementById('hero-cta'), p=document.getElementById('pricing'), q=document.getElementById('questions-demo');
+  if(!('IntersectionObserver' in window)||!s||!h) return;
+  var heroGone=false, priceVisible=false, quizVisible=false;
+  function upd(){var on=heroGone&&!priceVisible&&!quizVisible;s.classList.toggle('show',on);s.setAttribute('aria-hidden',on?'false':'true');}
+  new IntersectionObserver(function(e){heroGone=!e[0].isIntersecting&&e[0].boundingClientRect.top<0;upd();}).observe(h);
+  if(p) new IntersectionObserver(function(e){priceVisible=e[0].isIntersecting;upd();},{threshold:.15}).observe(p);
+  if(q) new IntersectionObserver(function(e){quizVisible=e[0].isIntersecting;upd();},{threshold:.05}).observe(q);
+})();
 </script>
-
+<script>
+/* Phones: free questions become a swipeable row and auto-advance after each answer */
+(function(){
+  var c=document.getElementById('inline-test-questions'); if(!c||!window.matchMedia) return;
+  var mq=window.matchMedia('(max-width:860px)');
+  c.addEventListener('click',function(e){
+    var b=e.target.closest&&e.target.closest('.inline-option-btn'); if(!b||!mq.matches) return;
+    var card=b.closest('.inline-question-card'); if(!card) return;
+    var wrong=!!card.querySelector('.inline-wrong');
+    setTimeout(function(){
+      var n=card.nextElementSibling; if(!n) return;
+      var pad=parseInt(getComputedStyle(c).paddingLeft,10)||0;
+      c.scrollTo({left:n.offsetLeft-pad,behavior:'smooth'});
+    }, wrong?2000:1000);
+  });
+})();
+</script>
 </body>
 </html>
